@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cobra"
 	"log"
 	"os"
-	"polaris/user-service/database/migrations" // Importa el paquete de migraciones
+	"polaris/user-service/database/migrations"
 	"polaris/user-service/database/seeders"
 )
 
@@ -19,7 +19,7 @@ var migrateCmd = &cobra.Command{
 	Short: "Ejecuta las migraciones de la base de datos",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Ejecutando migración...")
-		migrations.RunMigration() // Llama a la función de migración
+		migrations.RunMigration()
 		fmt.Println("Migración completada.")
 	},
 }
@@ -29,14 +29,14 @@ var seedCmd = &cobra.Command{
 	Short: "Ejecuta el seeder para cargar datos iniciales",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Ejecutando seeder...")
-		seeders.RunSeed()                 // Llama a la función de seeder
-		fmt.Println("Seeder completado.") // Mensaje de éxito
+		seeders.RunSeed()
+		fmt.Println("Seeder complete.")
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(migrateCmd) // Agrega el comando de migración al rootCmd
-	rootCmd.AddCommand(seedCmd)    // Agrega el comando de seeder al rootCmd
+	rootCmd.AddCommand(migrateCmd)
+	rootCmd.AddCommand(seedCmd)
 }
 
 func Execute() {

@@ -20,7 +20,6 @@ func UserData() error {
 		return err
 	}
 
-	// Define los datos del usuario
 	user := entities.User{
 		Email:    "admin@admin.com",
 		UserName: "admin",
